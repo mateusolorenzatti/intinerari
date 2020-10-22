@@ -1,0 +1,27 @@
+<div [ngClass]="{ 'active-menu': isShown }">
+    <div class="menu-bar">
+
+        <div class='row mt-0 col-12 p-3'>
+            <div class="col-6">
+                <p class=""> Menu </p>
+            </div>
+            
+            <div class="col-6">
+                <i 
+                    tabindex="0" 
+                    class="fa fa-window-close float-right text-danger" 
+                    (keyup.space)="toggle()" 
+                    (click)="toggle()">
+                </i>
+            </div>
+        </div>
+
+        <hr class="border-dark w-100 my-0" >
+        
+        <div class="col-12 p-4">
+            <ng-content></ng-content>
+        </div>
+
+    </div>
+    <div class="overlay" (click)="toggle()"></div>
+</div>

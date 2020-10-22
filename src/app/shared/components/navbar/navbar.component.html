@@ -1,0 +1,22 @@
+<nav class="navbar sticky-top bg-main navbar-dark">
+  <div class="container">
+    <div class="btn navbar-brand">
+      <i tabindex="0" (keyup.space)="menu.toggle()" (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
+      
+      <img src="assets/img/logo.svg" width="30" height="30" class="d-inline-block align-top ml-3 mr-2" alt="">
+      Intinerari
+    </div>
+    
+    <iti-menu #menu>
+         <iti-menu-item nomeItem='Opcao 1'> </iti-menu-item>
+         <iti-menu-item nomeItem='Opcao 2'> </iti-menu-item>
+         <iti-menu-item nomeItem='Opcao 3'> </iti-menu-item>
+    </iti-menu>
+
+    <div class="dropleft show navbar-nav">
+      <a class="nav-item nav-link d-none-xs" href="#"> IFRS - Farroupilha </a>
+    </div>
+
+  </div>
+</nav>
+<hr class="border-second w-100 my-0" >
