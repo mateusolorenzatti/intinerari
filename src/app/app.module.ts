@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { HomeModule } from './home/home.module'
-import { MenuModule } from './shared/components/menu/menu.module'
+import { MenuModule } from './shared/components/menu/menu.module';
 
 @NgModule({
   declarations: [
