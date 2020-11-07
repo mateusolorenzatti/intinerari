@@ -3,9 +3,8 @@ import { Input } from "@angular/core";
 import { AlertService } from "./alert.service";
 import { Alert, AlertType } from "./alert";
 
-
 @Component({
-    selector: 'kef-alert',
+    selector: 'iti-alert',
     templateUrl: './alert.component.html'
 })
 export class AlertComponent {

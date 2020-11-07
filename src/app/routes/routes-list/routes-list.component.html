@@ -1,0 +1,12 @@
+<div *ngIf="!routes.length; else mostrarLista">
+    <br>
+    <br>
+    <h5 class="text-center text-muted"> {{ MENSAGEM[msgStatus] }} </h5>
+</div>
+
+<ng-template #mostrarLista>
+    <div *ngFor="let route of routes" class="container">
+        <iti-route-item [route]="route" >  
+        </iti-route-item>
+    </div>
+</ng-template>

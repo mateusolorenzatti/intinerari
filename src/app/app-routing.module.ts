@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { TripsComponent } from './trips/trips.component';
 
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
+    pathMatch: 'full',
     component: HomeComponent
   },
-  { 
-    path: 'trips', 
-    component: TripsComponent
+  {
+    path: 'routes',
+    loadChildren: () => import('src/app/routes/routes.module').then(m => m.RoutesModule)
   }
 ];
 

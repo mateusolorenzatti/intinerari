@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 
 import { NavbarComponent } from './navbar.component';
 import { MenuModule } from '../menu/menu.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
+import { LoadingModule } from '../loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,9 @@ import { MenuModule } from '../menu/menu.module';
   imports: [
     BrowserModule,
     CommonModule,
-    MenuModule
+    MenuModule,
+    AppRoutingModule,
+    LoadingModule
   ],
   providers: [],
   exports: [
