@@ -1,28 +1,29 @@
 <div class="container mt-2">
-    
-    <div class="p-3 bg-main text-white">
-        <br>
-        <br>
-        <h3> Rota {{ route?.route_id }} - {{ route?.route_long_name }} </h3>
-    </div>
-    
-    <div class="container col-12 row">
-        <div class="col-10 mx-0 py-2">
-                <div *ngIf="trips?.length == 0; else listaTrips">
-                    Nenhum trajeto ativo para esta rota...
-                </div>
-                <ng-template #listaTrips>
-                    <div *ngFor="let trip of trips">
-                        <iti-trip-item [trip]="trip"> </iti-trip-item>
-                    </div>
-                </ng-template>
-        </div>
-        
-        <div class="col-2 mx-0">
-            <a class="btn btn-sm btn-danger m-2 float-right" (click)="voltar()">   
-                Voltar
+
+    <div class="py-2 bg-main text-white">
+        <div class="col-12">
+            <a class="btn btn-sm float-left ml-0 text-white" (click)="voltar()">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </a>
         </div>
+        <br>
+        <br>
+        <h5 class="m-3"> Rota {{ route?.route_id }} - {{ route?.route_long_name }} </h5>
+    </div>
+
+    <div class="">
+        <div class="col-md-12 mx-0 py-2 mx-0">
+            <div *ngIf="trips?.length == 0; else listaTrips">
+                Nenhum trajeto ativo para esta rota...
+            </div>
+            <ng-template #listaTrips>
+                <div *ngFor="let trip of trips">
+                    <iti-trip-item [trip]="trip"> </iti-trip-item>
+                </div>
+            </ng-template>
+        </div>
+
+
     </div>
 
 </div>

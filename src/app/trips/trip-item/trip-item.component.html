@@ -1,7 +1,8 @@
-<div class="card bg-dark text-white">
-    <br>
-    {{ trip.trip_id }}
-
-    <iti-map #map>
-    </iti-map>
+<div class="card my-2">
+    <div class="card-header">
+        <b> #{{ trip.trip_id.substring(2, 7) }} </b>
+    </div>
+    <div class="card-body">
+        <iti-map #map> </iti-map>
+    </div>
 </div>

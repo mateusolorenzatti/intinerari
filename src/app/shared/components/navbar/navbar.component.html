@@ -10,15 +10,10 @@
     </div>
     
     <iti-menu #menu>
-         <iti-menu-item nomeItem='Opcao 1'> </iti-menu-item>
-         <iti-menu-item nomeItem='Opcao 2'> </iti-menu-item>
-         <iti-menu-item nomeItem='Opcao 3'> </iti-menu-item>
+         <iti-menu-item icon="fa-home" nomeItem="Home" [routerLink]="['/']"> </iti-menu-item>
+         <iti-menu-item icon="fa-map-marker" nomeItem="Rotas" [routerLink]="['/routes']"> </iti-menu-item>
+         <iti-menu-item icon="fa-bus" nomeItem="Paradas" [routerLink]="['/']"> </iti-menu-item>
     </iti-menu>
-
-    <div class="dropleft show navbar-nav">
-      <a class="nav-item nav-link d-none-xs" href="https://ifrs.edu.br/farroupilha/"> IFRS - Farroupilha </a>
-    </div>
-
   </div>
 </nav>
 

@@ -10,17 +10,12 @@ import { Route } from '../../core/objects/routes/route';
 
 @Component({
   selector: 'iti-route-detail',
-  templateUrl: './route-detail.component.html',
-  styleUrls: ['./route-detail.style.scss']
+  templateUrl: './route-detail.component.html'
 })
 export class RouteDetailComponent implements OnInit {
 
   route: Route = null;
   trips: Trip[];
-
-  lat = -29.202676;
-  lon = -51.348213;
-  map = 'satellite';
 
   constructor(
     private activatedRoute: ActivatedRoute,
