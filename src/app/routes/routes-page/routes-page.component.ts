@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { SearchComponent } from 'src/app/shared/components/search/search.component';
 
 import { RoutesListComponent } from '../routes-list/routes-list.component';
-import { RouteSearchComponent } from '../route-search/route-search.component';
 
 @Component({
   selector: 'iti-routes',
@@ -11,7 +11,7 @@ import { RouteSearchComponent } from '../route-search/route-search.component';
 export class RoutesPageComponent implements OnInit {
 
   @ViewChild('routesList') routesList: RoutesListComponent;
-  @ViewChild('routesSearch') routesSearch: RouteSearchComponent;
+  @ViewChild('routesSearch') routesSearch: SearchComponent;
 
   constructor( ) { }
 

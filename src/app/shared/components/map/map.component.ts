@@ -14,9 +14,7 @@ export class MapComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
-
-  init(coordenadas: number[][]){
+  ngOnInit() {
     mapboxgl.accessToken = environment.mapbox.accessToken;
 
     this.map = new mapboxgl.Map({
@@ -25,7 +23,9 @@ export class MapComponent implements OnInit {
       center: [-51.346179, -29.225594],
       zoom: 12
     });
+  }
 
+  add_line(coordenadas: number[][], cor: string = '#ff0000') {
     this.map.on('load', () => {
       this.map.addSource('route', {
         'type': 'geojson',
@@ -48,11 +48,20 @@ export class MapComponent implements OnInit {
           'line-cap': 'round'
         },
         'paint': {
-          'line-color': '#ff0000',
+          'line-color': cor,
           'line-width': 5
         }
       });
     });
   }
 
+  add_point(coordenadas: number[]) {
+    this.map.on('load', () => {
+      this.map.setCenter(coordenadas);
+
+      const marker = new mapboxgl.Marker()
+        .setLngLat(coordenadas)
+        .addTo(this.map);
+    });
+  }
 }

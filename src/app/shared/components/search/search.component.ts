@@ -2,10 +2,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'iti-route-search',
-  templateUrl: './route-search.component.html',
+  selector: 'iti-search',
+  templateUrl: './search.component.html',
 })
-export class RouteSearchComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   @Output('submit') submitEvent = new EventEmitter<any>();
   @Output('limpar') limparEvent = new EventEmitter<any>();

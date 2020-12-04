@@ -19,4 +19,8 @@ export class TripsService {
   public getTripsByRoute(route_id: string): Observable<Trip[]> {
     return this.http.get<Trip[]>(this.api.trips_by_route() + "/" + route_id);
   }
+  
+  public getTripsByStop(stop_id: string): Observable<Trip[]> {
+    return this.http.get<Trip[]>(this.api.trips_by_stop() + "/" + stop_id);
+  }
 }

@@ -14,26 +14,10 @@ export class TripItemComponent implements OnInit {
 
   @Input() trip: Trip;
 
-  @ViewChild('map') map: MapComponent;
-
-  lista_coordenadas = [];
-
   constructor(
-    private shapesService: ShapeService
   ) { }
 
   ngOnInit(): void {
-    this.shapesService.getShapesByTrip(this.trip.trip_id).subscribe(
-      data => {
-
-        data.forEach(item => {
-          this.lista_coordenadas.push([item.shape_pt_lon, item.shape_pt_lat]);
-        });
-
-        this.map.init(this.lista_coordenadas);
-      }
-    );
-
   }
 
 }

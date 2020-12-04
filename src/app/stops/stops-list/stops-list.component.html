@@ -1,0 +1,12 @@
+<div *ngIf="!stops.length; else mostrarLista">
+    <br>
+    <br>
+    <h5 class="text-center text-muted"> {{ MENSAGEM[msgStatus] }} </h5>
+</div>
+
+<ng-template #mostrarLista>
+    <div *ngFor="let stop of stops" class="container">
+        <iti-stop-item [stop]="stop" >  
+        </iti-stop-item>
+    </div>
+</ng-template>
