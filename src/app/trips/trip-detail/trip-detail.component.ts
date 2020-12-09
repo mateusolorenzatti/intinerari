@@ -9,6 +9,7 @@ import { StopTimeService } from 'src/app/core/objects/stop-times/stop-time.servi
 import { TripsService } from 'src/app/core/objects/trips/trips.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
 import { ShapeService } from 'src/app/core/objects/shapes/shape.service';
+import { cpuUsage } from 'process';
 
 @Component({
   selector: 'iti-trip-detail',
@@ -18,6 +19,9 @@ export class TripDetailComponent implements OnInit {
 
   trip: Trip = null;
   stops: StopTime[];
+
+  infoAdicionais: boolean = false;
+  tabela: boolean = false;
 
   @ViewChild('map') map: MapComponent;
 
@@ -72,5 +76,10 @@ export class TripDetailComponent implements OnInit {
 
   voltar() {
     this._location.back();
+  }
+
+  toggle(componente: string) {
+    this.infoAdicionais = componente === 'infoAdicionais'? !this.infoAdicionais : this.infoAdicionais;
+    this.tabela = componente === 'tabela'? !this.tabela : this.tabela;
   }
 }

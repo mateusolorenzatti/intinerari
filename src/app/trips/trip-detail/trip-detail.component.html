@@ -8,20 +8,49 @@
         </div>
         <br>
         <br>
-        <h5 class="m-3"> Trajeto {{ trip?.route.route_short_name }} - {{ trip?.route.route_long_name }} ({{ trip?.trip_id.substring(2, 7) }}) </h5>
+        <h5 class="m-3"> Trajeto {{ trip?.route.route_short_name }} - {{ trip?.route.route_long_name }}
+            ({{ trip?.trip_id.substring(2, 7) }}) </h5>
     </div>
 
     <div class="">
         <div class="col-md-12 mx-0 py-2 mx-0">
-                <div class="">
-                    <iti-map #map> </iti-map>
+            <div class="">
+                <iti-map #map> </iti-map>
+            </div>
+
+            <div class="card m-2">
+                <div class="card-header" (click)="toggle('infoAdicionais')">
+                    Informações Adicionais
+                    <i class="fa {{ infoAdicionais ? 'fa-angle-up' : 'fa-angle-down' }} float-right" aria-hidden="true"></i>
                 </div>
- 
-                <div *ngIf="stops.length > 0"> 
-                    <div *ngFor="let stop_t of stops">
-                        <iti-stop-time-item [stop_t]="stop_t"> </iti-stop-time-item>
-                    </div>
+                <div class="card-body" *ngIf="infoAdicionais">
+                    <p class="card-text"> Horário de Saída: {{ stops[0]?.arrival_time }} </p>
+                    <p class="card-text"> Horário de Chegada: {{ stops[stops?.length - 1]?.arrival_time }} </p>
                 </div>
+            </div>
+
+            <div class="card m-2">
+                <div class="card-header" (click)="toggle('tabela')">
+                    Tabela de Horários
+                    <i class="fa {{ tabela ? 'fa-angle-up' : 'fa-angle-down' }} float-right" aria-hidden="true"></i>
+                </div>
+                <div class="card-body" *ngIf="tabela">
+                    <table class="table table-striped" *ngIf="stops?.length > 0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Parada</th>
+                                <th scope="col">Horáro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let stop_t of stops">
+                                <!-- <iti-stop-time-item [stop_t]="stop_t"> </iti-stop-time-item> -->
+                                <td> {{ stop_t.stop.stop_name }} </td>
+                                <td> {{ stop_t.arrival_time }} </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

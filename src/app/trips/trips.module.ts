@@ -5,7 +5,7 @@ import { MapModule } from '../shared/components/map/map.module';
 
 import { TripDetailComponent } from './trip-detail/trip-detail.component';
 import { TripsRoutingModule } from './trips-routing.module';
-import { StopsModule } from '../stops/stops.module';
+import { StopTimeItemModule } from '../stops/stop-time-item/stop-time-item.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { StopsModule } from '../stops/stops.module';
     TripsRoutingModule,
     CommonModule,
     MapModule,
-    StopsModule
+    StopTimeItemModule
   ],
   exports: [
     TripItemComponent

@@ -19,11 +19,7 @@ import { StopTimeItemComponent } from './stop-time-item/stop-time-item.component
     StopItemComponent,
     StopDetailComponent,
     StopItemComponent,
-    StopDetailComponent,
-    StopTimeItemComponent
-  ],
-  exports: [
-    StopTimeItemComponent
+    StopDetailComponent
   ],
   imports: [
     StopsRoutingModule,
