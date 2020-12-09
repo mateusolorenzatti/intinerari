@@ -39,22 +39,22 @@ export class RouteDetailComponent implements OnInit {
           this.route = data;
 
           this.tripsService.getTripsByRoute(id).subscribe(
-              data => {
-                this.trips = data;
+            data => {
+              this.trips = data;
 
-                this.shapeService.getShapesByTrip(this.trips[0].trip_id).subscribe(
-                  data => {
-                    const lista_coordenadas = [];
-            
-                    data.forEach(item => {
-                      lista_coordenadas.push([item.shape_pt_lon, item.shape_pt_lat]);
-                    });
-            
-                    this.map.add_line(lista_coordenadas);
-                  }
-                );
-              },
-              () => this.alert.danger("Erro ao carregar os trajetos!")
+              this.shapeService.getShapesByTrip(this.trips[0].trip_id).subscribe(
+                data => {
+                  const lista_coordenadas = [];
+
+                  data.forEach(item => {
+                    lista_coordenadas.push([item.shape_pt_lon, item.shape_pt_lat]);
+                  });
+
+                  this.map.add_line(lista_coordenadas);
+                }
+              );
+            },
+            () => this.alert.danger("Erro ao carregar os trajetos!")
           );
         },
         () => this.alert.danger("Erro ao localizar a rota!")
@@ -62,7 +62,7 @@ export class RouteDetailComponent implements OnInit {
     });
   }
 
-  voltar(){
+  voltar() {
     this._location.back();
   }
 }

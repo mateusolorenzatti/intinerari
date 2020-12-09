@@ -10,21 +10,22 @@ import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { HomeModule } from './home/home.module';
 import { MenuModule } from './shared/components/menu/menu.module';
 import { AlertModule } from './shared/components/alert/alert.module';
+import { PageLocationModule } from './shared/components/page-location/page-location.module';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule,
-    CommonModule,
     AppRoutingModule,
+    CommonModule,
     HttpClientModule,
 
     NavbarModule,
     HomeModule,
     MenuModule,
-    AlertModule
+    AlertModule,
+    PageLocationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

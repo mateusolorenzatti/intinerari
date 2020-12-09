@@ -26,6 +26,8 @@ export class MapComponent implements OnInit {
   }
 
   add_line(coordenadas: number[][], cor: string = '#ff0000') {
+    this.set_center(coordenadas);
+
     this.map.on('load', () => {
       this.map.addSource('route', {
         'type': 'geojson',
@@ -63,5 +65,32 @@ export class MapComponent implements OnInit {
         .setLngLat(coordenadas)
         .addTo(this.map);
     });
+  }
+
+  add_multi_points(coordenadas: number[][]) {
+    this.map.on('load', () => {
+
+      coordenadas.forEach(coordenada =>
+        new mapboxgl.Marker()
+          .setLngLat(coordenada)
+          .addTo(this.map)
+      );
+    });
+  }
+
+  set_center(coordenadas: number[][]) {
+    const longs = [], lats = [];
+
+    coordenadas.forEach(coordenada => {
+      longs.push(coordenada[0]);
+      lats.push(coordenada[1]);
+    });
+
+    const coordenada = [
+      (longs.reduce((soma, coo) => (soma + coo)) / longs.length),
+      (lats.reduce((soma, coo) => (soma + coo)) / lats.length)
+    ];
+
+    this.map.setCenter(coordenada);
   }
 }

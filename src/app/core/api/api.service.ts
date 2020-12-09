@@ -9,8 +9,12 @@ const api_routes = {
 
   stops: API_URL + "/stops",
   stop_id: API_URL + "/stops/id",
+  stops_by_trip: API_URL + "/stops/by_trip",
+  
+  stop_times_by_trip: API_URL + "/stop_times/by_trip",
 
   trips: API_URL + "/trips",
+  trip_id: API_URL + "/trips/id",
   trips_by_route: API_URL + "/trips/by_route",
   trips_by_stop: API_URL + "/trips/by_stop",
 
@@ -40,14 +44,26 @@ export class ApiService {
     return api_routes.stop_id;
   }
 
+  public stops_by_trip(): string {
+    return api_routes.stops_by_trip;
+  }
+
+  public stop_times_by_trip(): string {
+    return api_routes.stop_times_by_trip;
+  }
+
   public trips(): string {
     return api_routes.trips;
+  }
+
+  public trip_id(): string {
+    return api_routes.trip_id;
   }
 
   public trips_by_route(): string {
     return api_routes.trips_by_route;
   }
-  
+
   public trips_by_stop(): string {
     return api_routes.trips_by_stop;
   }

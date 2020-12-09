@@ -11,6 +11,8 @@ import { RoutesPageComponent } from './routes-page/routes-page.component';
 import { TripsModule } from '../trips/trips.module';
 import { MapModule } from '../shared/components/map/map.module';
 import { SearchModule } from '../shared/components/search/search.module';
+import { PageLocationModule } from '../shared/components/page-location/page-location.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,11 @@ import { SearchModule } from '../shared/components/search/search.module';
   imports: [
     RoutesRoutingModule,
     CommonModule,
+
     TripsModule,
     MapModule,
-    SearchModule
+    SearchModule,
+    PageLocationModule
   ]
 })
 export class RoutesModule { }

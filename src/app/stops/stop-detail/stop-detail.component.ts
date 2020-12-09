@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 import { Trip } from 'src/app/core/objects/trips/trip';
 import { Stop } from 'src/app/core/objects/stops/stop';
-import { ActivatedRoute } from '@angular/router';
 import { TripsService } from 'src/app/core/objects/trips/trips.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
 import { StopService } from 'src/app/core/objects/stops/stop.service';

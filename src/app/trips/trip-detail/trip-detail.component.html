@@ -1,0 +1,27 @@
+<div class="container mt-2">
+
+    <div class="py-2 bg-main text-white">
+        <div class="col-12">
+            <a class="btn btn-sm float-left ml-0 text-white" (click)="voltar()">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+        </div>
+        <br>
+        <br>
+        <h5 class="m-3"> Trajeto {{ trip?.route.route_short_name }} - {{ trip?.route.route_long_name }} ({{ trip?.trip_id.substring(2, 7) }}) </h5>
+    </div>
+
+    <div class="">
+        <div class="col-md-12 mx-0 py-2 mx-0">
+                <div class="">
+                    <iti-map #map> </iti-map>
+                </div>
+ 
+                <div *ngIf="stops.length > 0"> 
+                    <div *ngFor="let stop_t of stops">
+                        <iti-stop-time-item [stop_t]="stop_t"> </iti-stop-time-item>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

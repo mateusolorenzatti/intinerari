@@ -9,7 +9,7 @@ import { ApiService } from '../../api/api.service';
   providedIn: 'root'
 })
 export class StopService {
-
+  
   constructor(private http: HttpClient, private api: ApiService) { }
 
   public getStops(descricao: string): Observable<Stop[]> {
@@ -18,5 +18,9 @@ export class StopService {
 
   public getStop(id: string): Observable<Stop> {
     return this.http.get<Stop>(this.api.stop_id() + "/" + id);
+  }
+
+  public getStopsByTrip(trip_id: string): Observable<Stop[]> {
+    return this.http.get<Stop[]>(this.api.stops_by_trip() + "/" + trip_id);
   }
 }

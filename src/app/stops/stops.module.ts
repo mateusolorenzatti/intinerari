@@ -8,6 +8,9 @@ import { StopsRoutingModule } from './stops-routing.module';
 import { SearchModule } from '../shared/components/search/search.module';
 import { MapModule } from '../shared/components/map/map.module';
 import { TripsModule } from '../trips/trips.module';
+import { PageLocationModule } from '../shared/components/page-location/page-location.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { StopTimeItemComponent } from './stop-time-item/stop-time-item.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +19,20 @@ import { TripsModule } from '../trips/trips.module';
     StopItemComponent,
     StopDetailComponent,
     StopItemComponent,
-    StopDetailComponent
+    StopDetailComponent,
+    StopTimeItemComponent
+  ],
+  exports: [
+    StopTimeItemComponent
   ],
   imports: [
     StopsRoutingModule,
+    CommonModule,
+
     SearchModule,
     MapModule,
     TripsModule,
-    CommonModule,
+    PageLocationModule
   ]
 })
 export class StopsModule { }

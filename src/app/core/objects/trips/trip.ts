@@ -20,4 +20,6 @@ export interface Trip {
     continuous_drop_off_message: string;
     route_id: number;
     shape_id: string;
+
+    route: Route;
 }

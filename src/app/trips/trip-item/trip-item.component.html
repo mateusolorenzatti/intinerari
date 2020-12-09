@@ -1,6 +1,7 @@
-<div class="card my-2">
-    <div class="card-header">
-        <b> #{{ trip.trip_id.substring(2, 7) }} </b>
+<div class="btn w-100 text-left m-0 p-0">
+    <div class="card my-2 border-success" [routerLink]="['/trips', trip.trip_id]">
+        <div class="card-header">
+            <b> #{{ trip.trip_id.substring(2, 7) }} - {{ trip.route.route_long_name }} </b>
+        </div>
     </div>
-    
 </div>
