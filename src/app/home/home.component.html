@@ -1,8 +1,13 @@
 <div class="container">
-    <a class="btn btn-main w-100 mt-4" [routerLink]="['/routes']">
-        Consultar as Rotas
-    </a>
-    <a class="btn btn-main w-100 mt-1" [routerLink]="['/stops']">
-        Consultar as Paradas
-    </a>
+
+    <div class="row mt-2">
+        <div class="col-md-6 my-2">
+            <iti-home-item [icon]="'fa-map-marker'" [text]="'Consultar as Rotas'" [routerLink]="['/routes']"> </iti-home-item>
+        </div>
+        
+        <div class="col-md-6 my-2">
+            <iti-home-item [icon]="'fa-bus'" [text]="'Consultar as Paradas'" [routerLink]="['/stops']"> </iti-home-item>
+        </div>
+    </div>
+
 </div>
